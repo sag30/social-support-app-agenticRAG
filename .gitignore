@@ -1,0 +1,5 @@
+# Ignore VSCode project settings
+.vscode/
+
+# Ignore Chroma DB data
+chromadb_data/
