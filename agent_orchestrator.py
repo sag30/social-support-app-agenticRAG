@@ -32,13 +32,13 @@ def extract_json_block(text):
 def etl_agent(_: str) -> dict:
     try:
         # 1. Extraction
-        subprocess.run(["python", "etl_pipeline.py"], check=True)
+        subprocess.run(["python", "services/ingestion_service/etl_pipeline.py"], check=True)
         # 2. Feature engineering
-        subprocess.run(["python", "feature_engineering.py"], check=True)
+        subprocess.run(["python", "services/preprocessing_service/feature_engineering.py"], check=True)
         # 3. DB ingest
-        subprocess.run(["python", "db_ingest.py"], check=True)
+        subprocess.run(["python", "services/ingestion_service/db_ingest.py"], check=True)
         # 4. Chroma ingest
-        subprocess.run(["python", "chroma_ingest.py"], check=True)
+        subprocess.run(["python", "services/ingestion_service/chroma_ingest.py"], check=True)
 
         # Check manifest
         manifest_path = "data/processed/manifest.json"
@@ -85,6 +85,7 @@ def rag_agent(question: str, applicant_key: str) -> dict:
         retriever=retriever
     )
     out = qa.invoke({"query": question})
+    print("Shruti: In rag_agent(), RAG answer:", out)
     # Make sure to return as dict for agent chaining
     if isinstance(out, dict) and "result" in out:
         return {"rag_answer": out.get("result",out)}
@@ -132,7 +133,7 @@ Never add explanations, markdown, 'Final Answer:', 'Observation', or extra text 
 Example output:
 {
   "manifest": { "processed_files": ["file1.pdf", "file2.pdf"] },
-  "recommendations": { "eligible": true, "recommendations": {"Upskilling Grant": 1.0, ...}},
+  "recommendations": { "eligible": true, "recommendations": {"Upskilling Grant": 1.0, "Stipend":0,"Career Counseling":1}},
   "rag_answer": "The account number is AE987654321098765432109."
 }
 
@@ -150,6 +151,7 @@ agent_executor = initialize_agent(
     handle_parsing_errors=True
 )
 
+# Master orchestrator: always run ETL, model, then RAG if question provided
 def run_master(applicant_key: str, question: str = None) -> dict:
     global current_applicant
     current_applicant = applicant_key
@@ -158,16 +160,22 @@ def run_master(applicant_key: str, question: str = None) -> dict:
         "question": question or ""
     }
     try:
-        output = agent_executor.run({"input": json.dumps(input_text)})
-        # Ensure JSON-only output
-        json_text = extract_json_block(output)
-        if not json_text:
-            # Fallback: wrap raw as rag_answer
-            return {"manifest": None, "recommendations": None, "rag_answer": output.strip()}
-        try:
-            return json.loads(json_text)
-        except json.JSONDecodeError:
-            return {"manifest": None, "recommendations": None, "rag_answer": output.strip()}
+        manifest = etl_agent(applicant_key)
+        recommendations = model_agent(applicant_key)
+        rag_answer = None
+        if question:
+            rag_answer = rag_agent(question, applicant_key).get("rag_answer")
+        return {"manifest": manifest, "recommendations": recommendations, "rag_answer": rag_answer}
+        # output = agent_executor.run({"input": json.dumps(input_text)})
+        # # Ensure JSON-only output
+        # json_text = extract_json_block(output)
+        # if not json_text:
+        #     # Fallback: wrap raw as rag_answer
+        #     return {"manifest": None, "recommendations": None, "rag_answer": output.strip()}
+        # try:
+        #     return json.loads(json_text)
+        # except json.JSONDecodeError:
+        #     return {"manifest": None, "recommendations": None, "rag_answer": output.strip()}
     except Exception as e:
         return {"error": f"Agent exception: {e}"}
 

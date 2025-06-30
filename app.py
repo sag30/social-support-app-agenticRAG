@@ -81,21 +81,23 @@ if submitted:
 if st.session_state["processing"]:
     st.info("Processing your files. Please wait...")
 
-if "agent_result" in st.session_state:
-    result = st.session_state["agent_result"]
-    manifest = result.get("manifest", {})
-    st.subheader("Files Processed (from ETL Manifest)")
-    files = manifest.get("files", [])
-    if files:
-        for f in files:
-            st.write(f"- {f}")
-    else:
-        st.info("No files found or processed.")
+# if "agent_result" in st.session_state:
+#     result = st.session_state["agent_result"]
+#     manifest = result.get("manifest", {})
+#     st.subheader("Files Processed (from ETL Manifest)")
+#     files = manifest.get("files", [])
+#     if files:
+#         for f in files:
+#             st.write(f"- {f}")
+#     else:
+#         st.info("No files found or processed.")
 
 if st.session_state.get("result"):
     st.subheader("Eligibility")
-    recs = st.session_state["result"].get("recommendations", {})
-    eligible = st.session_state["result"].get("eligible", None)
+    recs = st.session_state["result"].get("recommendations", { "eligible": False, "recommendations": {"Upskilling Grant": 0.0, "Stipend":0.0,"Career Counseling":0.0}})
+    print("Shruti: In app.py Recommendations:", recs)
+    eligible = recs.get("eligible", False)
+    print("Shruti: In app.py eligible:", eligible)
     if not recs:
         st.info("Not eligible for any programs at this time.")
     else:
@@ -103,15 +105,15 @@ if st.session_state.get("result"):
             st.success("Eligible for support!")
         else:
             st.info("Not eligible at this time.")
-        st.write(pd.DataFrame(recs.items(), columns=["Program", "Score"]))
+        st.write(pd.DataFrame(recs['recommendations'].items(), columns=["Program", "Score"]))
 
     # Log for auditability
     pd.DataFrame([{
         "timestamp": datetime.now().isoformat(),
         "applicant_key": applicant_key,
-        "upskilling_grant": recs.get("Upskilling Grant", 0),
-        "stipend":         recs.get("Stipend", 0),
-        "counseling_voucher": recs.get("Career Counseling", 0),
+        "upskilling_grant": recs['recommendations'].get("Upskilling Grant", 0),
+        "stipend":         recs['recommendations'].get("Stipend", 0),
+        "counseling_voucher": recs['recommendations'].get("Career Counseling", 0),
         "eligible":        eligible
     }]).to_csv(LOG_PATH, mode="a", header=not os.path.exists(LOG_PATH), index=False)
 
@@ -125,22 +127,11 @@ if applicant_key:
     chat_q = st.text_input("Ask a question about your application documents:", key="doc_chat")
     if st.button("Send", key="doc_chat_send"):
         try:
-            # qa_result = run_master(applicant_key, question=chat_q)
-            # rag_answer = "No answer."
-            # if isinstance(result, dict):
-            #     if "rag_answer" in result:
-            #         rag_answer = result["rag_answer"]
-            #     elif "result" in result:
-            #         rag_answer = result["result"]
-            #     elif isinstance(list(result.values())[0], str):
-            #         rag_answer = list(result.values())[0]
-            # st.session_state["messages"].append(("user", chat_q))
-            # st.session_state["messages"].append(("agent", rag_answer))
-
-        
             # Direct RAG call instead of agent, for full control
+            print("Shruti: In app.py, calling rag_agent with question:", chat_q, ' and applicant_key:', applicant_key)
             rag_res = rag_agent(chat_q, applicant_key)
             rag_answer = rag_res.get("rag_answer", "No answer.")
+            print("Shruti: In app.py, RAG answer:", rag_answer)
             st.session_state["messages"].append(("user", chat_q))
             st.session_state["messages"].append(("agent", rag_answer))
             # Log for auditability
