@@ -1,0 +1,15 @@
+Bank Statement
+Name: Hassan Al Mansoori
+Account Number: AE123456789012345678901
+Statement Period: 01 May 2025 - 31 May 2025
+Date Description Debit (AED) Credit (AED) Balance (AED)
+05/05/2025 Dining 834.00 - 49166.00
+23/05/2025 Grocery 1818.00 - 47348.00
+18/05/2025 Dining 1996.00 - 45352.00
+17/05/2025 Transfer Out 1405.00 - 43947.00
+24/05/2025 Rent 1041.00 - 42906.00
+05/05/2025 Rent 1684.00 - 41222.00
+21/05/2025 Transfer Out 268.00 - 40954.00
+27/05/2025 Grocery 1600.00 - 39354.00
+22/05/2025 Utilities 1085.00 - 38269.00
+18/05/2025 Grocery 1410.00 - 36859.00

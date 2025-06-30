@@ -1,0 +1,7 @@
+Sample Credit Report
+Name: Ahmad Rashid Mohammed
+Emirates ID: 784-1979-1234567-1
+Date: 29 June 2025
+Credit Score: 725
+Credit Utilization: 30%
+Total Inquiries (last 12m): 2

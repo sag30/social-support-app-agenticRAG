@@ -1,0 +1,15 @@
+Monthly Bank Statement
+Account Holder: Zeeshan Yasin Muhammad Yasin
+Emirates ID: 784-1989-1593287-9
+Account Number: AE070192000987654321234
+Statement Period: 01/05/2025 - 31/05/2025
+Opening Balance: AED 45,000.00
+Closing Balance: AED 41,750.00
+Transactions:
+05/05/2025 Salary Credit AED 12,000.00
+07/05/2025 Rent Debit AED 4,000.00
+11/05/2025 Groceries Debit AED 1,000.00
+14/05/2025 Utilities Debit AED 450.00
+18/05/2025 Dining Debit AED 700.00
+22/05/2025 Transfer to Savings Debit AED 2,500.00
+26/05/2025 Dividend Credit AED 150.00

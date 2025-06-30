@@ -1,0 +1,7 @@
+Sample Credit Report
+Name: Hassan Al Mansoori
+Emirates ID: 784-2023123456789-5
+Date: 29 June 2025
+Credit Score: 780
+Credit Utilization: 20%
+Total Inquiries (last 12m): 3

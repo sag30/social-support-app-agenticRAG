@@ -1,0 +1,14 @@
+Zeeshan Yasin Muhammad Yasin
+Address: Al Mushrif, Abu Dhabi, UAE
+Email: zeeshan.yasin@example.com
+Phone: +971 52 234 5678
+Emirates ID: 784-1989-1593287-9
+Date of Birth: 04 October 1989
+Professional Summary
+Skilled software engineer with over 8 years of experience in full-stack development, cloud architectures, and cybersecurity best practices in UAE-based firms.
+Work Experience
+Education
+M.Sc. Computer Science, University of Karachi, 2013
+B.Sc. Computer Science, University of Karachi, 2011
+Skills
+Java, Python, AWS, Docker, Kubernetes, Agile Methodologies

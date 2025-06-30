@@ -1,0 +1,15 @@
+Bank Statement
+Name: Ahmad Rashid Mohammed
+Account Number: AE987654321098765432109
+Statement Period: 01 May 2025 - 31 May 2025
+Date Description Debit (AED) Credit (AED) Balance (AED)
+01/05/2025 Dining 584.00 - 29416.00
+14/05/2025 Salary - 8933.00 38349.00
+19/05/2025 Salary - 9095.00 47444.00
+10/05/2025 Transfer In - 9839.00 57283.00
+29/05/2025 Salary - 5981.00 63264.00
+01/05/2025 Transfer Out 1945.00 - 61319.00
+13/05/2025 Rent 1989.00 - 59330.00
+01/05/2025 Utilities 1807.00 - 57523.00
+19/05/2025 Salary - 9181.00 66704.00
+06/05/2025 Transfer Out 1974.00 - 64730.00

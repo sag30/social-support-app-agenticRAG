@@ -1,0 +1,9 @@
+timestamp,applicant_key,question,rag_answer
+2025-06-30T16:01:34.351343,ahmad,What is my account number,No answer found.
+2025-06-30T17:50:12.240840,ahmad,What is my account id,No answer.
+2025-06-30T18:08:20.248349,zeeshan,what document is uploaded,No answer.
+2025-06-30T18:41:34.442754,zeesh,What is my account number,Agent exception: Expecting value: line 1 column 1 (char 0)
+2025-06-30T18:50:15.424408,zeesh,What is my account number,Agent exception: Expecting value: line 1 column 1 (char 0)
+2025-06-30T18:53:05.478911,zeesh,What is my account number,Agent exception: Expecting value: line 1 column 1 (char 0)
+2025-06-30T18:58:07.698460,zeesh,What is my account number,Agent exception: Expecting value: line 1 column 1 (char 0)
+2025-06-30T18:59:50.488846,zeesh,What is my account number,Agent exception: Expecting value: line 1 column 1 (char 0)

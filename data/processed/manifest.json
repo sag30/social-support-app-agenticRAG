@@ -1,0 +1,158 @@
+[
+  {
+    "source": "credit_report_srkam.pdf",
+    "type": "text",
+    "output": "data/processed/credit_report_srkam.txt"
+  },
+  {
+    "source": "EmiratesID_srk.jpg",
+    "type": "text",
+    "output": "data/processed/EmiratesID_srk.txt"
+  },
+  {
+    "source": "EmiratesID_ahmad.jpg",
+    "type": "text",
+    "output": "data/processed/EmiratesID_ahmad.txt"
+  },
+  {
+    "source": "bank_statement_ahmad.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_ahmad.txt"
+  },
+  {
+    "source": "bank_statement_srk.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_srk.txt"
+  },
+  {
+    "source": "bank_statement_shr.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_shr.txt"
+  },
+  {
+    "source": "bank_statement_nono.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_nono.txt"
+  },
+  {
+    "source": "bank_statement_Zeeshan.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_Zeeshan.txt"
+  },
+  {
+    "source": "credit_report_ahmad.pdf",
+    "type": "text",
+    "output": "data/processed/credit_report_ahmad.txt"
+  },
+  {
+    "source": "bank_statement_zees.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_zees.txt"
+  },
+  {
+    "source": "EmiratesID_srkam.jpg",
+    "type": "text",
+    "output": "data/processed/EmiratesID_srkam.txt"
+  },
+  {
+    "source": "bank_statement_momo.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_momo.txt"
+  },
+  {
+    "source": "bank_statement_mussie.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_mussie.txt"
+  },
+  {
+    "source": "bank_statement_srkam.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_srkam.txt"
+  },
+  {
+    "source": "bank_statement_zeesh.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_zeesh.txt"
+  },
+  {
+    "source": "bank_statement_meme.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_meme.txt"
+  },
+  {
+    "source": "assets_liabilities_srk.xlsx",
+    "type": "table",
+    "sheet": "Assets",
+    "output": "data/processed/assets_liabilities_srk_Assets.csv"
+  },
+  {
+    "source": "assets_liabilities_srk.xlsx",
+    "type": "table",
+    "sheet": "Liabilities",
+    "output": "data/processed/assets_liabilities_srk_Liabilities.csv"
+  },
+  {
+    "source": "bank_statement_asd.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_asd.txt"
+  },
+  {
+    "source": "credit_report_srk.pdf",
+    "type": "text",
+    "output": "data/processed/credit_report_srk.txt"
+  },
+  {
+    "source": "EmiratesID_Zeeshan.jpeg",
+    "type": "text",
+    "output": "data/processed/EmiratesID_Zeeshan.txt"
+  },
+  {
+    "source": "sample_resume_srkam.docx",
+    "type": "text",
+    "output": "data/processed/sample_resume_srkam.txt"
+  },
+  {
+    "source": "bank_statement_zee.pdf",
+    "type": "text",
+    "output": "data/processed/bank_statement_zee.txt"
+  },
+  {
+    "source": "sample_resume_ahmad.docx",
+    "type": "text",
+    "output": "data/processed/sample_resume_ahmad.txt"
+  },
+  {
+    "source": "sample_resume_srk.docx",
+    "type": "text",
+    "output": "data/processed/sample_resume_srk.txt"
+  },
+  {
+    "source": "EmiratesID_zeesh.jpeg",
+    "type": "text",
+    "output": "data/processed/EmiratesID_zeesh.txt"
+  },
+  {
+    "source": "assets_liabilities_srkam.xlsx",
+    "type": "table",
+    "sheet": "Assets",
+    "output": "data/processed/assets_liabilities_srkam_Assets.csv"
+  },
+  {
+    "source": "assets_liabilities_srkam.xlsx",
+    "type": "table",
+    "sheet": "Liabilities",
+    "output": "data/processed/assets_liabilities_srkam_Liabilities.csv"
+  },
+  {
+    "source": "assets_liabilities_ahmad.xlsx",
+    "type": "table",
+    "sheet": "Assets",
+    "output": "data/processed/assets_liabilities_ahmad_Assets.csv"
+  },
+  {
+    "source": "assets_liabilities_ahmad.xlsx",
+    "type": "table",
+    "sheet": "Liabilities",
+    "output": "data/processed/assets_liabilities_ahmad_Liabilities.csv"
+  }
+]
